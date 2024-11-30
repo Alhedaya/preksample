@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="logo.ico">
+  <title>Homework</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+    .container {
+      text-align: center;
+      width: 90%;
+      max-width: 600px;
+    }
+    #editableDiv {
+      width: 100%;
+      min-height: 200px;
+      padding: 10px;
+      border: 2px solid #333;
+      border-radius: 5px;
+      background-color: #fff;
+      outline: none;
+      overflow-y: auto;
+    }
+    #downloadButton {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    #downloadButton:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Editable Content Area</h2>
+    <div id="editableDiv" contenteditable="true">
+      Type or paste your text here...
+    </div>
+    <button id="downloadButton">Download as PDF</button>
+  </div>
+
+  <!-- Include html2pdf.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+  <script>
+    document.getElementById("downloadButton").addEventListener("click", function () {
+      const element = document.getElementById("editableDiv");
+      const options = {
+        margin:       1,
+        filename:     'editable-content.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(options).from(element).save();
+    });
+  </script>
+</body>
+</html>
