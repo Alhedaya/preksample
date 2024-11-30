@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Powerpoint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+<style>
+body{background: linear-gradient(45deg, white, #D1E4C4, white); overflow-x:hidden; height:600vh;}
+
+
+.div{display:grid; grid-template-columns:900px; justify-content:center; cursor:pointer;}
+.div1{ text-align: left; font-size:30px; background:#F1F7ED; padding:10px; border-radius:6px; box-shadow: 1px 1px 1px grey;}
+.p{text-align:center; font-size:40px;}
+.wrapper{overflow-x:hidden;}
+
+img{width:400px;}
+
+.div2{display:grid; grid-template-columns:1fr 1fr;}
+.div3{display:grid; grid-template-columns:1fr 1fr 1fr;}
+.div4{display:grid; grid-template-columns:1fr 1fr 1fr 1fr;}
+.div5{display:grid; grid-template-columns:1fr 1fr 1fr 1fr 1fr;}
+
+
+
+@media only screen and (max-width: 1000px){
+
+.div{display:grid; grid-template-columns: 1fr;}
+.div1{font-size:25px;}
+.p{text-align:center; font-size:25px;}
+.wrapper{overflow-x:hidden;}
+
+img{width:250px;}
+
+.div2{display:grid; grid-template-columns: 1fr;}
+.div3{display:grid; grid-template-columns: 1fr;}
+.div4{display:grid; grid-template-columns: 1fr;}
+.div5{display:grid; grid-template-columns: 1fr 1fr 1fr 1fr 1fr;}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+
+
+<div class="div">
+<div class="p">Powerpoint</div><br>
+<div class="div1">
+
+<iframe src=".pptx">Alphabet</iframe>
+
+</div>
+
+
+</div>
+</div><br>
+
+
+
+
+
+
+</div>
+ 
+
+<script>
+  var sound1 = new Audio();
+  sound1.src = "alif.mp3";
+</script>
+
+</body>
+</html>
